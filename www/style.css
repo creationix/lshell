@@ -1,0 +1,18 @@
+html {
+  color: #f0f0f0;
+  background: #000;
+}
+body {
+  font-family: Menlo, Consolas, Ubuntu Mono, monospace;
+  font-size: 11px;
+  margin: 5px;
+}
+h1 {
+  margin-bottom: 20px;
+  font: 20px/1.5 sans-serif;
+}
+
+.terminal-cursor {
+  color: #000;
+  background: #f0f0f0;
+}

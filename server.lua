@@ -14,13 +14,13 @@ ffi.cdef[[
               void *termp,
               const struct winsize *winp);
 ]]
-local util = ffi.open("util")
+local util = ffi.load("util")
 
 require('weblit-websocket')
 require('weblit-app')
 
 .bind({
-  host = "127.0.0.1",
+  host = "127.0.0.1", -- Change to "0.0.0.0" if you want the world to have access (BEWARE)
   port = 9000
 })
 

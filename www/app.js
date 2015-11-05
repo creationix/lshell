@@ -33,7 +33,7 @@ function toRaw(binary, start, end) {
 var cols = Math.floor((window.innerWidth - 4.8 - 4.8) / 6.6125);
 var rows = Math.floor((window.innerHeight -4.8 - 4.8) / 12.8);
 var program = "/bin/bash";
-var url = "ws://localhost:9000/" + cols + "/" + rows + program;
+var url = "ws://" + window.location.host + "/" + cols + "/" + rows + program;
 var connection = new WebSocket(url, ["xterm"]);
 connection.binaryType = 'arraybuffer';
 

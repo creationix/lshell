@@ -42,13 +42,8 @@ require('weblit-app')
   ffi.C.openpty(master, slave, nil, nil, winp)
   master, slave = master[0], slave[0]
   local program = "/" .. req.params.program
-  local args
-  if program == "/bin/bash" then
-    args = {"--login"}
-  end
   uv.spawn(program, {
     stdio = {slave, slave, slave},
-    args = args,
     detached = true
   }, function () end)
 

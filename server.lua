@@ -14,6 +14,7 @@ ffi.cdef[[
               void *termp,
               const struct winsize *winp);
 ]]
+local util = ffi.open("util")
 
 require('weblit-websocket')
 require('weblit-app')
@@ -39,7 +40,7 @@ require('weblit-app')
   local winp = ffi.new("struct winsize")
   winp.ws_row = tonumber(req.params.rows)
   winp.ws_col = tonumber(req.params.cols)
-  ffi.C.openpty(master, slave, nil, nil, winp)
+  util.openpty(master, slave, nil, nil, winp)
   master, slave = master[0], slave[0]
   local program = "/" .. req.params.program
   uv.spawn(program, {
